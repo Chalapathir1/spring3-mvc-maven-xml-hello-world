@@ -24,7 +24,7 @@ pipeline {
 	}
 	stage('Deploye'){
 		steps{
-		deploy adapters: [tomcat8(credentialsId: 'tomcat_credentials', path: '', url: 'http://ec2-13-234-35-27.ap-south-1.compute.amazonaws.com:8080/')], contextPath: 'Hello_Pipeline'&update=true, onFailure: false, war: '**/target/*.war'
+		deploy adapters: [tomcat8(credentialsId: 'tomcat_credentials', path: '', url: 'http://ec2-13-234-35-27.ap-south-1.compute.amazonaws.com:8080/')], contextPath: 'Hello_Pipeline', onFailure: false, war: '**/target/*.war' &update=true
 		}
 	}
 
